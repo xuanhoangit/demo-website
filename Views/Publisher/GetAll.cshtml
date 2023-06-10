@@ -1,0 +1,26 @@
+@model IEnumerable<BookStoreApp.Models.Publisher>
+@{
+    ViewData["Title"] = "GetAll";
+}
+<div class="container" style="width: 40%;">
+    <h1>List Of Publisher</h1>
+    <a href="/Publisher/Add" >Add new</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>Publisher</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PublisherName</td>
+                <td>
+                    <a href="/Publisher/Update/?Id=@item.Id" class="btn btn-dark"><i class="bi bi-upload"></i> Update</a>
+                    <a href="/Publisher/Delete/?Id=@item.Id" class="btn btn-danger"><i class="bi bi-x-lg"></i> Delete</a>
+                </td>
+            </tr>
+        }
+        </thead>
+    </table>
+</div>

@@ -1,0 +1,23 @@
+@model BookStoreApp.Models.Author;
+@{
+    
+}
+<div class="container" style="width:40%;">
+    <h1>Add Author</h1>
+    <form asp-action="Add">
+        <div class="form-group">
+        <label asp-for="AuthorName">Name</label>
+        <input asp-for="AuthorName"  class="form-control" />
+        <span asp-validation-for="AuthorName" class="text-danger"></span>
+    </div>
+    <div>
+        @if(@TempData["msg"]!=null){
+            @TempData["msg"]
+        }
+    </div>
+    <div class="mt-2">
+        <button type="submit" class="btn btn-primary"><i class="bi bi-check"></i> Save</button>
+        <a href="/Author/GetAll" class="btn btn-primary">All Author</a>
+    </div>
+    </form>
+</div>

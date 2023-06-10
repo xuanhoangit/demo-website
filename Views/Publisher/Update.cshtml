@@ -1,0 +1,24 @@
+@model BookStoreApp.Models.Publisher;
+@{
+    
+}
+<div class="container" style="width:40%;">
+    <h1>Update Publisher</h1>
+    <form asp-action="Update">
+        <input type="hidden" asp-for="Id">
+        <div class="form-group">
+        <label asp-for="PublisherName">PublisherName</label>
+        <input asp-for="PublisherName"  class="form-control" />
+        <span asp-validation-for="PublisherName" class="text-danger"></span>
+    </div>
+    <div>
+        @if(@TempData["msg"]!=null){
+            @TempData["msg"]
+        }
+    </div>
+    <div class="mt-2">
+        <button type="submit" class="btn btn-primary"><i class="bi bi-check"></i> Update</button>
+        <a href="/Publisher/GetAll" class="btn btn-primary"><i class="bi bi-arrow-return-left"></i> Back</a>
+    </div>
+    </form>
+</div>
